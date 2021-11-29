@@ -10,11 +10,28 @@ Viewing plugin's README(.md) easily as vim help
 
 vim-readme-viewer help you to view some plugins' README(.md) file easily as
 vim help. Viewing vim help is very easy. Only `:help topic`! This plugin usage
-is also easy. Please try:
+is also easy. If you are using [dein.vim](https://github.com/Shougo/dein.vim) please try:
 
 ```viml
 :DeinReadme dein.vim
 :DeinReadme vim-readme-viewer
+```
+
+If you are using other plugin managers, please set:
+
+```viml
+let g:readme_viewer#plugin_manager = 'vim-plug'  " for vim-plug
+let g:readme_viewer#plugin_manager = 'minpac'  " for minpac
+```
+
+and you can try:
+
+```viml
+:PlugReadme vim-plug  " for vim-plug
+:PlugReadme vim-readme-viewer
+:PackReadme minpac  " for minpac
+:PackReadme vim-readme-viewer
+
 ```
 
 **Note:** This plugin is working with [dein.vim](https://github.com/Shougo/dein.vim),
