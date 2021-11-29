@@ -44,7 +44,7 @@ endfunction
 " vim-plug
 
 function! readme_viewer#plug(plugin) abort
-  let plugin = get(g:plug, a:plugin, {})
+  let plugin = get(g:plugs, a:plugin, {})
   if empty(plugin)
     echoerr 'Cannot find plugin name:' a:plugin
     return
@@ -54,9 +54,9 @@ endfunction
 
 function! readme_viewer#plug_completion(ArgLead, CmdLine, CursorPos) abort
   if empty(a:ArgLead)
-    return sort(keys(g:plug))
+    return sort(keys(g:plugs))
   else
-    return matchfuzzy(sort(keys(g:plug)), a:ArgLead)
+    return matchfuzzy(sort(keys(g:plugs)), a:ArgLead)
   endif
 endfunction
 
