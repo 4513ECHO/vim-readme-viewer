@@ -34,10 +34,15 @@ If you are using other plugin managers, please set:
 and you can try:
 
 >
-	:PlugReadme vim-plug  " for vim-plug
-	:PlugReadme vim-readme-viewer
+	:PlugReadme vim-readme-viewer  " for vim-plug
 	:PackReadme minpac  " for minpac
 	:PackReadme vim-readme-viewer
+
+Note: On default, vim-plug is not register itself as a plugin. So,
+vim-readme-viewer cannot open vim-plug's README.md. If you want to view
+vim-plug's README.md, you register vim-plug as a plugin.
+>
+	Plug 'junegunn/vim-plug'
 
 Note: This plugin is working with |dein.vim|, |vim-plug| and |minpac| now.
 I will supprt |packer.nvim|.
