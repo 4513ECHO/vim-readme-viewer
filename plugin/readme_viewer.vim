@@ -7,8 +7,19 @@ let g:loaded_readme_viewer = v:true
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! -nargs=1 -bar -complete=customlist,readme_viewer#dein_completion
-      \ DeinReadme call readme_viewer#dein(<q-args>)
+let g:readme_viewer#plugin_manager = get(g:,
+      \ 'readme_viewer#plugin_manager', 'dein.vim')
+
+if g:readme_viewer#plugin_manager ==# 'dein.vim'
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#dein_completion
+        \ DeinReadme call readme_viewer#dein(<q-args>)
+elseif g:readme_viewer#plugin_manager ==# 'vim-plug'
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#plug_completion
+        \ PlugReadme call readme_viewer#plug(<q-args>)
+elseif g:readme_viewer#plugin_manager ==# 'minpac'
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#minpac_completion
+        \ PackReadme call readme_viewer#minpac(<q-args>)
+endif
 
 augroup readme_viewer
   autocmd!

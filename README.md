@@ -17,15 +17,16 @@ is also easy. Please try:
 :DeinReadme vim-readme-viewer
 ```
 
-**Note:** This plugin is working only with [dein.vim](https://github.com/Shougo/dein.vim) now. However, I will
-supprt [vim-plug](https://github.com/junegunn/vim-plug), [minpac](
-https://github.com/k-takata/minpac), [packer.nvim](
+**Note:** This plugin is working with [dein.vim](https://github.com/Shougo/dein.vim),
+[vim-plug](https://github.com/junegunn/vim-plug) and [minpac](
+https://github.com/k-takata/minpac) now. I will supprt [packer.nvim](
 https://github.com/wbthomason/packer.nvim).
 
 ## TODO
 
 - Improve README.md and doc/readme_viewer.txt
 - Support other plugin managers
-  - [ ] [vim-plug](https://github.com/junegunn/vim-plug)
-  - [ ] [minpac](https://github.com/k-takata/minpac)
+  - [x] [dein.vim](https://github.com/Shougo/dein.vim)
+  - [x] [vim-plug](https://github.com/junegunn/vim-plug)
+  - [x] [minpac](https://github.com/k-takata/minpac)
   - [ ] [packer.nvim](https://github.com/wbthomason/packer.nvim)

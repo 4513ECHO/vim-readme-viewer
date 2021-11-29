@@ -42,8 +42,22 @@ working when using with |:DeinReadme|.
 :ReadmeHelp					*:ReadmeHelp*
 	Open current buffer plugin on |:help|. It sometimes may fail.
 
+:PlugReadme					*:PlugReadme*
+	See also |:DeinReadme|.
+
+:PackReadme					*:PackReadme*
+	See also |:DeinReadme|.
+
 ------------------------------------------------------------------------------
 VARIABLES					*readme-viewer-variables*
+
+g:readme_viewer#plugin_manager		*g:readme_viewer#plugin_manager*
+			string (default: "|dein.vim|")
+	Plugin manager you use. This variable controls command you can use.
+	value		command~
+	"dein.vim"	|:DeinReadme|
+	"vim-plug"	|:PlugReadme|
+	"minpac"	|:PackReadme|
 
 b:readme_data					*b:readme_data*
 			dict
@@ -69,7 +83,7 @@ g:readme_viewer#no_mappings			*g:readme_viewer#no_mappings*
 g:readme_viewer#no_buffer_commands	*g:readme_viewer#no_buffer_commands*
 			boolean (default: |v:false|)
 	Disable buffer local commands when README is opened. If you don't set
-	this variables, you can use |:DeinHelp|.
+	this variables, you can use |:ReadmeHelp|.
 
 ------------------------------------------------------------------------------
 AUTOCOMMANDS					*readme-viewer-autocommands*

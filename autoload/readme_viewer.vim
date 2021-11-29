@@ -22,6 +22,8 @@ function! readme_viewer#open(path, name) abort
   endif
 endfunction
 
+" dein.vim
+
 function! readme_viewer#dein(plugin) abort
   let plugin = dein#get(a:plugin)
   if empty(plugin)
@@ -39,3 +41,40 @@ function! readme_viewer#dein_completion(ArgLead, CmdLine, CursorPos) abort
   endif
 endfunction
 
+" vim-plug
+
+function! readme_viewer#plug(plugin) abort
+  let plugin = get(g:plug, a:plugin, {})
+  if empty(plugin)
+    echoerr 'Cannot find plugin name:' a:plugin
+    return
+  endif
+  call readme_viewer#open(plugin.dir, plugin.name)
+endfunction
+
+function! readme_viewer#plug_completion(ArgLead, CmdLine, CursorPos) abort
+  if empty(a:ArgLead)
+    return sort(keys(g:plug))
+  else
+    return matchfuzzy(sort(keys(g:plug)), a:ArgLead)
+  endif
+endfunction
+
+" minpac
+
+function! readme_viewer#minpac(plugin) abort
+  let plugin = minpac#getpluginfo(a:plugin)
+  if empty(plugin)
+    echoerr 'Cannot find plugin name:' a:plugin
+    return
+  endif
+  call readme_viewer#open(plugin.dir, plugin.name)
+endfunction
+
+function! readme_viewer#minpac_completion(ArgLead, CmdLine, CursorPos) abort
+  if empty(a:ArgLead)
+    return sort(keys(minpac#getpluglist()))
+  else
+    return matchfuzzy(sort(keys(minpac#getpluglist())), a:ArgLead)
+  endif
+endfunction
