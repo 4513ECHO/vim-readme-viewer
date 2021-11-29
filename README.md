@@ -1,8 +1,10 @@
 # vim-readme-viewer
 
-Please read [help](doc/reame_viewer.txt) for details.
+Please read [help](doc/readme_viewer.txt) for details.
 
 Viewing plugin's README(.md) easily as vim help
+
+![screenshot](img/screenshot.png)
 
 ## About
 
@@ -16,7 +18,6 @@ is also easy. Please try:
 ```
 
 **Note:** This plugin is working only with [dein.vim](https://github.com/Shougo/dein.vim) now. However, I will
-support other plugin managers such as [vim-plug](
 https://github.com/junegunn/vim-plug), [minpac](
 https://github.com/junegunn/vim-plug), [packer.nvim](
 https://github.com/junegunn/vim-plug).
