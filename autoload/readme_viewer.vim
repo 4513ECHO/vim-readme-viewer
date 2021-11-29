@@ -49,7 +49,7 @@ function! readme_viewer#plug(plugin) abort
     echoerr 'Cannot find plugin name:' a:plugin
     return
   endif
-  call readme_viewer#open(plugin.dir, plugin.name)
+  call readme_viewer#open(plugin.dir, a:plugin)
 endfunction
 
 function! readme_viewer#plug_completion(ArgLead, CmdLine, CursorPos) abort
