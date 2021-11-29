@@ -19,13 +19,28 @@ INTRODUCTION					*readme-viewer-introdution*
 
 *readme-viewer* or *vim-readme-viewer* help you to view some plugins'
 README(.md) file easily as vim help. Viewing vim help is very easy.
-Only `:help topic`! This plugin usage is also easy. Please try:
+Only `:help topic`! This plugin usage is also easy. If you are using
+|dein.vim|, please try:
 >
 	:DeinReadme dein.vim
 	:DeinReadme vim-readme-viewer
 
-Note: This plugin is working only with |dein.vim| now. However, I will support
-other plugin managers such as |vim-plug|, |minpac|, |packer.nvim|.
+If you are using other plugin managers, please set:
+
+>
+	let g:readme_viewer#plugin_manager = 'vim-plug'  " for vim-plug
+	let g:readme_viewer#plugin_manager = 'minpac'  " for minpac
+
+and you can try:
+
+>
+	:PlugReadme vim-plug  " for vim-plug
+	:PlugReadme vim-readme-viewer
+	:PackReadme minpac  " for minpac
+	:PackReadme vim-readme-viewer
+
+Note: This plugin is working with |dein.vim|, |vim-plug| and |minpac| now.
+I will supprt |packer.nvim|.
 
 ==============================================================================
 INTERFACE					*readme-viewer-interface*
@@ -43,10 +58,10 @@ working when using with |:DeinReadme|.
 	Open current buffer plugin on |:help|. It sometimes may fail.
 
 :PlugReadme					*:PlugReadme*
-	See also |:DeinReadme|.
+	This is same as |:DeinReadme|. Please see it.
 
 :PackReadme					*:PackReadme*
-	See also |:DeinReadme|.
+	This is same as |:DeinReadme|. Please see it.
 
 ------------------------------------------------------------------------------
 VARIABLES					*readme-viewer-variables*
