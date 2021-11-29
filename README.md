@@ -18,9 +18,9 @@ is also easy. Please try:
 ```
 
 **Note:** This plugin is working only with [dein.vim](https://github.com/Shougo/dein.vim) now. However, I will
-https://github.com/junegunn/vim-plug), [minpac](
-https://github.com/junegunn/vim-plug), [packer.nvim](
-https://github.com/junegunn/vim-plug).
+supprt [vim-plug](https://github.com/junegunn/vim-plug), [minpac](
+https://github.com/k-takata/minpac), [packer.nvim](
+https://github.com/wbthomason/packer.nvim).
 
 ## TODO
 
