@@ -57,10 +57,10 @@ working when using with |:DeinReadme|.
 :ReadmeHelp					*:ReadmeHelp*
 	Open current buffer plugin on |:help|. It sometimes may fail.
 
-:PlugReadme					*:PlugReadme*
+:PlugReadme {plugin}				*:PlugReadme*
 	This is same as |:DeinReadme|. Please see it.
 
-:PackReadme					*:PackReadme*
+:PackReadme {plugin}				*:PackReadme*
 	This is same as |:DeinReadme|. Please see it.
 
 ------------------------------------------------------------------------------
