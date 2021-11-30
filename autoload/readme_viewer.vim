@@ -3,9 +3,11 @@ function! readme_viewer#open(path, name) abort
   let readme = get(split(globpath(a:path, '\creadme.*'), '\n'), 0, '')
   if filereadable(readme)
     " TODO: support vertical
-    execute 'keepalt new' readme
     if open_help_buffer
       helpclose
+    endif
+    execute 'keepalt new' readme
+    if open_help_buffer
       setlocal buftype=help
     endif
     setlocal noswapfile nobuflisted readonly nomodified nomodifiable
