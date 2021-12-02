@@ -21,6 +21,13 @@ elseif g:readme_viewer#plugin_manager ==# 'minpac'
         \ PackReadme call readme_viewer#minpac(<q-args>)
 endif
 
+if has('nvim')
+  if g:readme_viewer#plugin_manager ==# 'packer.nvim' || exists(':PackerInstall')
+    command! -nargs=1 -bar -complete=customlist,v:lua.require'readme_viewer'.packer_completion
+          \ PackerReadme lua require('readme_viewer').packer(<q-args>)
+  endif
+endif
+
 augroup readme_viewer
   autocmd!
   autocmd User ReadmeOpen :
