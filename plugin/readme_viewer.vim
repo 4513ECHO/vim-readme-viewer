@@ -39,6 +39,9 @@ augroup readme_viewer
     autocmd User ReadmeOpen
           \ command! -buffer -bar ReadmeHelp
           \ execute 'help' b:readme_data.normalized_name
+    autocmd User ReadmeOpen
+          \ command! -buffer -bar ReadmeDir
+          \ edit %:p:h
   endif
 augroup END
 
