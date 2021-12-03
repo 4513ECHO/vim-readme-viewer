@@ -15,8 +15,9 @@ readme_viewer.packer = function(plugin)
 end
 
 readme_viewer.packer_completion = function(ArgLead, _, _)
+  if _G.packer_plugins == nil then return "" end
   local completion_list = vim.tbl_filter(function(name)
-    return vim.startswith(name, lead)
+    return vim.startswith(name, ArgLead)
   end, vim.tbl_keys(_G.packer_plugins))
   table.sort(completion_list)
   return completion_list
