@@ -1,4 +1,4 @@
-*readme-viewer.txt*	Viewing plugin's README(.md) easily as vim help
+*readme-viewer.txt*	Viewing plugin's README(.md) easily like vim help
 
 Author: Hibiki <4513echo@gmail.com>
 License: MIT License
@@ -18,25 +18,29 @@ About						|readme-viewer-about|
 INTRODUCTION					*readme-viewer-introdution*
 
 *readme-viewer* or *vim-readme-viewer* help you to view some plugins'
-README(.md) file easily as vim help. Viewing vim help is very easy.
+README(.md) file easily like vim help. Viewing vim help is very easy.
 Only `:help topic`! This plugin usage is also easy. If you are using
 |dein.vim|, please try:
 >
 	:DeinReadme dein.vim
 	:DeinReadme vim-readme-viewer
 
-If you are using other plugin managers, please set:
-
->
-	let g:readme_viewer#plugin_manager = 'vim-plug'  " for vim-plug
-	let g:readme_viewer#plugin_manager = 'minpac'  " for minpac
-
-and you can try:
+If you are using other plugin managers, please try:
 
 >
 	:PlugReadme vim-readme-viewer  " for vim-plug
-	:PackReadme minpac  " for minpac
-	:PackReadme vim-readme-viewer
+	:PackReadme vim-readme-viewer  " for minpac
+	:PackerReadme vim-readme-viewer  " for packer.nvim
+
+Note: Basically vim-readme-viewer automatically judge your using plugin
+manager. However, it sometimes may fail. I recommend that you set manually
+|g:readme_viewer#plugin_manager| to plugin manager.
+
+>
+	let g:readme_viewer#plugin_manager = 'dein.vim'  " for dein.vim
+	let g:readme_viewer#plugin_manager = 'vim-plug'  " for vim-plug
+	let g:readme_viewer#plugin_manager = 'minpac'  " for minpac
+	let g:readme_viewer#plugin_manager = 'packer.nvim'  " for packer.nvim
 
 Note: On default, vim-plug is not register itself as a plugin. So,
 vim-readme-viewer cannot open vim-plug's README.md. If you want to view
@@ -44,8 +48,8 @@ vim-plug's README.md, you register vim-plug as a plugin.
 >
 	Plug 'junegunn/vim-plug'
 
-Note: This plugin is working with |dein.vim|, |vim-plug| and |minpac| now.
-I will supprt |packer.nvim|.
+Note: This plugin is working with |dein.vim|, |vim-plug|, |minpac| and
+|packer.nvim| now.
 
 ==============================================================================
 INTERFACE					*readme-viewer-interface*
@@ -59,25 +63,36 @@ COMMANDS					*readme-viewer-commands*
 Note: |:vertical|, |:botright|, |:topleft|, and some command mofifier is not
 working when using with |:DeinReadme|.
 
-:ReadmeHelp					*:ReadmeHelp*
-	Open current buffer plugin on |:help|. It sometimes may fail.
-
 :PlugReadme {plugin}				*:PlugReadme*
 	This is same as |:DeinReadme|. Please see it.
 
 :PackReadme {plugin}				*:PackReadme*
 	This is same as |:DeinReadme|. Please see it.
 
+:PackerReadme {plugin}				*:PackerReadme*
+	This is same as |:DeinReadme|. Please see it.
+
+:ReadmeHelp					*:ReadmeHelp*
+	Open current buffer plugin on |:help|. It sometimes fails when the
+	plugin doesn't have itself help file.
+
+:ReadmeDir					*:ReadmeDir*
+	Open. It is same as `:edit %:p:h` . It is useful when you use some
+	filer plugins. (e.g. |netrw|)
+
 ------------------------------------------------------------------------------
 VARIABLES					*readme-viewer-variables*
 
 g:readme_viewer#plugin_manager		*g:readme_viewer#plugin_manager*
-			string (default: "|dein.vim|")
-	Plugin manager you use. This variable controls command you can use.
+			string (default: empty)
+	Your using plugin manager. This variable controls command you can use.
+	If you omit it, vim-readme-viewer automatically judge your using
+	plugin manager. I recommend that you set it manually.
 	value		command~
-	"dein.vim"	|:DeinReadme|
-	"vim-plug"	|:PlugReadme|
-	"minpac"	|:PackReadme|
+	"|dein.vim|"	|:DeinReadme|
+	"|vim-plug|"	|:PlugReadme|
+	"|minpac|"	|:PackReadme|
+	"|packer.nvim|"	|:PackerReadme|
 
 b:readme_data					*b:readme_data*
 			dict
@@ -86,8 +101,10 @@ b:readme_data					*b:readme_data*
 
 	key		value~
 	path		plugin installed directory
-	name		plugin name
+			(e.g. `/home/user/.vim/plugged/vim-readme-viewer`)
+	name		plugin name (e.g. `vim-readme-viewer`)
 	normalized_name	normalized plugin name
+			(e.g. `readme-viewer`, `dein`, `packer`)
 
 g:readme_viewer#open_help_buffer	*g:reame_viewer#open_help_buffer*
 			boolean (default: |v:true|)
@@ -103,7 +120,7 @@ g:readme_viewer#no_mappings			*g:readme_viewer#no_mappings*
 g:readme_viewer#no_buffer_commands	*g:readme_viewer#no_buffer_commands*
 			boolean (default: |v:false|)
 	Disable buffer local commands when README is opened. If you don't set
-	this variables, you can use |:ReadmeHelp|.
+	this variables, you can use |:ReadmeHelp| and |:ReadmeDir|.
 
 ------------------------------------------------------------------------------
 AUTOCOMMANDS					*readme-viewer-autocommands*
