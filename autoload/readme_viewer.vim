@@ -36,11 +36,14 @@ function! readme_viewer#dein(plugin) abort
 endfunction
 
 function! readme_viewer#dein_completion(ArgLead, CmdLine, CursorPos) abort
-  if empty(a:ArgLead)
-    return sort(keys(dein#get()))
+  if exists('?matchfuzzy')
+    if empty(a:ArgLead)
+      return sort(keys(dein#get()))
+    else
+      return matchfuzzy(sort(keys(dein#get())), a:ArgLead)
+    endif
   else
-    return matchfuzzy(sort(keys(dein#get())), a:ArgLead)
-  endif
+    return filter(sort(keys(dein#get())), {_, val -> val =~? a:ArgLead})
 endfunction
 
 " vim-plug
@@ -55,11 +58,14 @@ function! readme_viewer#plug(plugin) abort
 endfunction
 
 function! readme_viewer#plug_completion(ArgLead, CmdLine, CursorPos) abort
-  if empty(a:ArgLead)
-    return sort(keys(g:plugs))
+  if exists('?matchfuzzy')
+    if empty(a:ArgLead)
+      return sort(keys(g:plugs))
+    else
+      return matchfuzzy(sort(keys(g:plugs)), a:ArgLead)
+    endif
   else
-    return matchfuzzy(sort(keys(g:plugs)), a:ArgLead)
-  endif
+    return filter(sort(keys(g:plugs)), {_, val -> val =~? a:ArgLead})
 endfunction
 
 " minpac
@@ -74,9 +80,14 @@ function! readme_viewer#minpac(plugin) abort
 endfunction
 
 function! readme_viewer#minpac_completion(ArgLead, CmdLine, CursorPos) abort
-  if empty(a:ArgLead)
-    return sort(keys(minpac#getpluglist()))
+  if exists('?matchfuzzy')
+    if empty(a:ArgLead)
+      return sort(keys(minpac#getpluglist()))
+    else
+      return matchfuzzy(sort(keys(minpac#getpluglist())), a:ArgLead)
+    endif
   else
-    return matchfuzzy(sort(keys(minpac#getpluglist())), a:ArgLead)
-  endif
+    return filter(sort(keys(minpac#getpluglist())),
+          \ {_, val -> val =~? a:ArgLead})
 endfunction
+
