@@ -4,7 +4,7 @@ Please read [help](doc/readme_viewer.txt) for details.
 
 > Viewing plugin's README(.md) easily like vim help
 
-![screenshot](img/screenshot.png)
+![screenshot](img/screenshot.gif)
 
 ## About
 
@@ -46,14 +46,16 @@ Plug 'junegunn/vim-plug'
 ```
 
 **Note:** This plugin is working with [dein.vim](https://github.com/Shougo/dein.vim),
-[vim-plug](https://github.com/junegunn/vim-plug) and [minpac](
-https://github.com/k-takata/minpac) now. I will supprt [packer.nvim](
-https://github.com/wbthomason/packer.nvim).
+[vim-plug](https://github.com/junegunn/vim-plug), [minpac](
+https://github.com/k-takata/minpac) and [packer.nvim](
+https://github.com/wbthomason/packer.nvim) now.
 
 ## TODO
 
 - Improve README.md and doc/readme_viewer.txt
 - Support other plugin managers
+  - [ ] runtimepath based plugin manager
+  - [ ] buildin package system based plugin manager
   - [x] [dein.vim](https://github.com/Shougo/dein.vim)
   - [x] [vim-plug](https://github.com/junegunn/vim-plug)
   - [x] [minpac](https://github.com/k-takata/minpac)
