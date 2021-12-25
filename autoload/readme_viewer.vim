@@ -1,27 +1,28 @@
 function! readme_viewer#open(path, name) abort
   let open_help_buffer = get(g:, 'readme_viewer#open_help_buffer', v:true)
-  let readme = get(split(globpath(a:path, '\creadme.*'), '\n'), 0, '')
-  if filereadable(readme)
-    " TODO: support vertical
-    if open_help_buffer
-      helpclose
-    endif
-    execute 'keepalt new' readme
-    if open_help_buffer
-      setlocal buftype=help
-    endif
-    setlocal noswapfile nobuflisted readonly nomodified nomodifiable
-    let normalized_name = substitute(
-          \ fnamemodify(a:name, ':r'),
-          \ '\v\c^%(n?vim|dps)[_-]|[_-]n?vim$', '', 'g')
-    let b:readme_data = {
-          \ 'path': a:path, 'name': a:name,
-          \ 'normalized_name': normalized_name,
-          \ }
-    doautocmd <nomodeline> User ReadmeOpen
-  else
+  let open_command = get(g:, 'readme_viewer#open_command', 'new')
+  let readme = get(globpath(a:path, '\creadme.*', v:false, v:true), 0, '')
+  if !filereadable(readme)
     echoerr 'README file does not exists in this plugin'
+    return
   endif
+  " TODO: support vertical
+  if open_help_buffer
+    helpclose
+  endif
+  execute 'keepalt' open_command readme
+  if open_help_buffer
+    setlocal buftype=help
+  endif
+  setlocal noswapfile nobuflisted readonly nomodified nomodifiable
+  let normalized_name = substitute(
+        \ fnamemodify(a:name, ':r'),
+        \ '\v\c^%(n?vim|dps)[_-]|[_-]n?vim$', '', 'g')
+  let b:readme_data = {
+        \ 'path': a:path, 'name': a:name,
+        \ 'normalized_name': normalized_name,
+        \ }
+  doautocmd <nomodeline> User ReadmeOpen
 endfunction
 
 " dein.vim
