@@ -5,10 +5,7 @@ local readme_viewer = {}
 readme_viewer.packer = function(plugin)
   local plugin_data = _G.packer_plugins[plugin]
   if plugin_data == nil then
-    vim.cmd(string.format(
-      "echoerr 'Cannot find plugin name:' '%s'",
-      plugin
-    ))
+    vim.fn['readme_viewer#error']('Cannot find plugin name:', plugin)
     return
   end
   vim.fn['readme_viewer#open'](plugin_data.path, plugin)
