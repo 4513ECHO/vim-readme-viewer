@@ -17,9 +17,9 @@ About						|readme-viewer-about|
 ==============================================================================
 INTRODUCTION					*readme-viewer-introdution*
 
-*readme-viewer* or *vim-readme-viewer* help you to view some plugins'
-README(.md) file easily like vim help. Viewing vim help is very easy.
-Only `:help topic`! This plugin usage is also easy. If you are using
+*readme-viewer* or *vim-readme-viewer* help you to view some installed plugins'
+README(.md) file easily like vim help file. Viewing vim help file is very easy.
+Only `:help {topic}`! This plugin usage is also easy. If you are using
 |dein.vim|, please try:
 >
 	:DeinReadme dein.vim
