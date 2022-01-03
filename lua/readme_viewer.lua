@@ -2,13 +2,13 @@ local readme_viewer = {}
 
 -- packer.nvim
 
-readme_viewer.packer = function(plugin)
+readme_viewer.packer = function(plugin, mods)
   local plugin_data = _G.packer_plugins[plugin]
   if plugin_data == nil then
     vim.fn['readme_viewer#error']('Cannot find plugin name:', plugin)
     return
   end
-  vim.fn['readme_viewer#open'](plugin_data.path, plugin)
+  vim.fn['readme_viewer#open'](plugin_data.path, plugin, mods)
 end
 
 readme_viewer.packer_completion = function(ArgLead, _, _)

@@ -1,4 +1,4 @@
-function! readme_viewer#open(path, name) abort
+function! readme_viewer#open(path, name, mods) abort
   let open_help_buffer = get(g:, 'readme_viewer#open_help_buffer', v:true)
   let open_command = get(g:, 'readme_viewer#open_command', 'new')
   let readme = get(globpath(a:path, '\creadme*', v:false, v:true), 0, '')
@@ -6,11 +6,10 @@ function! readme_viewer#open(path, name) abort
     call s:error('README file does not exists in this plugin')
     return
   endif
-  " TODO: support vertical
   if open_help_buffer
     helpclose
   endif
-  execute 'keepalt' open_command readme
+  execute a:mods 'keepalt' open_command readme
   if open_help_buffer
     setlocal buftype=help
   endif
@@ -27,13 +26,13 @@ endfunction
 
 " dein.vim
 
-function! readme_viewer#dein(plugin) abort
+function! readme_viewer#dein(plugin, mods) abort
   let plugin = dein#get(a:plugin)
   if empty(plugin)
     call readme_viewer#error('Cannot find plugin name:', a:plugin)
     return
   endif
-  call readme_viewer#open(plugin.path, plugin.name)
+  call readme_viewer#open(plugin.path, plugin.name, a:mods)
 endfunction
 
 function! readme_viewer#dein_completion(ArgLead, CmdLine, CursorPos) abort
@@ -49,13 +48,13 @@ endfunction
 
 " vim-plug
 
-function! readme_viewer#plug(plugin) abort
+function! readme_viewer#plug(plugin, mods) abort
   let plugin = get(g:plugs, a:plugin, {})
   if empty(plugin)
     call readme_viewer#error('Cannot find plugin name:', a:plugin)
     return
   endif
-  call readme_viewer#open(plugin.dir, a:plugin)
+  call readme_viewer#open(plugin.dir, a:plugin, a:mods)
 endfunction
 
 function! readme_viewer#plug_completion(ArgLead, CmdLine, CursorPos) abort
@@ -71,13 +70,13 @@ endfunction
 
 " minpac
 
-function! readme_viewer#minpac(plugin) abort
+function! readme_viewer#minpac(plugin, mods) abort
   let plugin = minpac#getpluginfo(a:plugin)
   if empty(plugin)
     call readme_viewer#error('Cannot find plugin name:', a:plugin)
     return
   endif
-  call readme_viewer#open(plugin.dir, plugin.name)
+  call readme_viewer#open(plugin.dir, plugin.name, a:mods)
 endfunction
 
 function! readme_viewer#minpac_completion(ArgLead, CmdLine, CursorPos) abort

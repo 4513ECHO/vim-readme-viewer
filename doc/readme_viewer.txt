@@ -60,9 +60,6 @@ COMMANDS					*readme-viewer-commands*
 :DeinReadme {plugin}				*:DeinReadme*
 	Open plugin's README(.md) viewing window.
 
-Note: |:vertical|, |:botright|, |:topleft|, and some command mofifier is not
-working when using with |:DeinReadme|.
-
 :PlugReadme {plugin}				*:PlugReadme*
 	This is same as |:DeinReadme|. Please see it.
 
