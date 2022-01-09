@@ -6,22 +6,23 @@ Please read [help](doc/readme_viewer.txt) for details.
 
 ![screenshot](img/screenshot.gif)
 
-# Table of Contents
-
-- [vim-readme-viewer](#vim-readme-viewer)
-  - [About](#about)
-  - [Why use this?](#why-use-this)
-  - [Installation](#installation)
-    - [<a href="https://github.com/Shougo/dein.vim">dein.vim</a>](#deinvim)
-    - [<a href="https://github.com/junegunn/vim-plug">vim-plug</a>](#vim-plug)
-    - [<a href="https://github.com/k-takata/minpac">minpac</a>](#minpac)
-    - [<a href="https://github.com/wbthomason/packer.nvim">packer.nvim</a>](#packernvim)
-  - [Tips](#tips)
-    - [General](#general)
-    - [vim-plug](#vim-plug-1)
-  - [TODO](#todo)
-  - [Introduced Articles](#introduced-articles)
-  - [License](#license)
+<!--ts-->
+* [vim-readme-viewer](#vim-readme-viewer)
+   * [About](#about)
+   * [Why use this?](#why-use-this)
+   * [Installation](#installation)
+      * [<a href="https://github.com/Shougo/dein.vim">dein.vim</a>](#deinvim)
+      * [<a href="https://github.com/junegunn/vim-plug">vim-plug</a>](#vim-plug)
+      * [<a href="https://github.com/k-takata/minpac">minpac</a>](#minpac)
+      * [<a href="https://github.com/wbthomason/packer.nvim">packer.nvim</a>](#packernvim)
+   * [Tips](#tips)
+      * [General](#general)
+      * [vim-plug](#vim-plug-1)
+      * [packer.nvim](#packernvim-1)
+   * [TODO](#todo)
+   * [Introduced Articles](#introduced-articles)
+   * [License](#license)
+<!--te-->
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -126,6 +127,11 @@ register vim-plug as a plugin.
 ```vim
 Plug 'junegunn/vim-plug'
 ```
+
+### packer.nvim
+
+`:PackerReadme` require that executing `:PackerCompile`. If you don't execute
+it, `vim-readme-viewer` throws error.
 
 ## TODO
 
