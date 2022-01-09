@@ -3,6 +3,12 @@ local readme_viewer = {}
 -- packer.nvim
 
 readme_viewer.packer = function(plugin, mods)
+  if _G.packer_plugins == nil then
+    vim.fn['readme_viewer#error'](
+      '_G.packer_plugins is undefined yet. Did you forget :PackerCompile?'
+    )
+    return
+  end
   local plugin_data = _G.packer_plugins[plugin]
   if plugin_data == nil then
     vim.fn['readme_viewer#error']('Cannot find plugin name:', plugin)
@@ -12,7 +18,9 @@ readme_viewer.packer = function(plugin, mods)
 end
 
 readme_viewer.packer_completion = function(ArgLead, _, _)
-  if _G.packer_plugins == nil then return "" end
+  if _G.packer_plugins == nil then
+    return ""
+  end
   local completion_list = vim.tbl_filter(function(name)
     return vim.startswith(name, ArgLead)
   end, vim.tbl_keys(_G.packer_plugins))
