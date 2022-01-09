@@ -3,7 +3,7 @@ function! readme_viewer#open(path, name, mods) abort
   let open_command = get(g:, 'readme_viewer#open_command', 'new')
   let readme = get(globpath(a:path, '\creadme*', v:false, v:true), 0, '')
   if !filereadable(readme)
-    call s:error('README file does not exists in this plugin')
+    call readme_viewer#error('README file does not exists in this plugin')
     return
   endif
   if open_help_buffer
