@@ -14,6 +14,10 @@ readme_viewer.packer = function(plugin, mods)
     vim.fn['readme_viewer#error']('Cannot find plugin name:', plugin)
     return
   end
+  if plugin_data.path == nil then
+    vim.fn['readme_viewer#error']('Plugins path is emtpy')
+    return
+  end
   vim.fn['readme_viewer#open'](plugin_data.path, plugin, mods)
 end
 

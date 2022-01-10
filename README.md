@@ -101,8 +101,14 @@ call minpac#add('4513ECHO/vim-readme-viewer')
 ### [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-vim.g['readme_viewer#plugin_manager'] = 'packer.nvim'
-use { '4513ECHO/vim-readme-viewer', opt = true, cmd = 'PackerReadme' }
+use {
+  '4513ECHO/vim-readme-viewer',
+  opt = true,
+  cmd = 'PackerReadme',
+  config = function()
+    vim.g['readme_viewer#plugin_manager'] = 'packer.nvim'
+  end
+}
 ```
 
 ## Tips
@@ -130,8 +136,10 @@ Plug 'junegunn/vim-plug'
 
 ### packer.nvim
 
-`:PackerReadme` require that executing `:PackerCompile`. If you don't execute
-it, `vim-readme-viewer` throws error.
+- `:PackerReadme` require that executing `:PackerCompile`. If you don't execute
+  it, `vim-readme-viewer` throws error.
+- plugin's path data is sometimes empty. See also
+  [wbthomason/packer.vim#765](https://github.com/wbthomason/packer.nvim/issues/765).
 
 ## TODO
 
