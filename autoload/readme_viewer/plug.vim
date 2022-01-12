@@ -29,5 +29,6 @@ function! readme_viewer#plug#completion(ArgLead, CmdLine, CursorPos) abort
     endif
   else
     return filter(sort(keys(g:plugs)), {_, val -> val =~? a:ArgLead})
+  endif
 endfunction
 

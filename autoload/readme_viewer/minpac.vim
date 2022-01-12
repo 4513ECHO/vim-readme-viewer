@@ -30,5 +30,6 @@ function! readme_viewer#minpac#completion(ArgLead, CmdLine, CursorPos) abort
   else
     return filter(sort(keys(minpac#getpluglist())),
           \ {_, val -> val =~? a:ArgLead})
+  endif
 endfunction
 

@@ -29,5 +29,6 @@ function! readme_viewer#dein#completion(ArgLead, CmdLine, CursorPos) abort
     endif
   else
     return filter(sort(keys(dein#get())), {_, val -> val =~? a:ArgLead})
+  endif
 endfunction
 
