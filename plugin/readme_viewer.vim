@@ -11,14 +11,14 @@ let g:readme_viewer#plugin_manager = get(g:,
       \ 'readme_viewer#plugin_manager', '')
 
 if g:readme_viewer#plugin_manager ==# 'dein.vim' || exists('*dein#begin')
-  command! -nargs=1 -bar -complete=customlist,readme_viewer#dein_completion
-        \ DeinReadme call readme_viewer#dein(<q-args>, <q-mods>)
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#dein#completion
+        \ DeinReadme call readme_viewer#dein#open(<q-args>, <q-mods>)
 elseif g:readme_viewer#plugin_manager ==# 'vim-plug' || exists('*plug#begin')
-  command! -nargs=1 -bar -complete=customlist,readme_viewer#plug_completion
-        \ PlugReadme call readme_viewer#plug(<q-args>, <q-mods>)
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#plug#completion
+        \ PlugReadme call readme_viewer#plug#open(<q-args>, <q-mods>)
 elseif g:readme_viewer#plugin_manager ==# 'minpac' || exists('*minpac#init')
-  command! -nargs=1 -bar -complete=customlist,readme_viewer#minpac_completion
-        \ PackReadme call readme_viewer#minpac(<q-args>, <q-mods>)
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#minpac#completion
+        \ PackReadme call readme_viewer#minpac#open(<q-args>, <q-mods>)
 endif
 
 if has('nvim')
