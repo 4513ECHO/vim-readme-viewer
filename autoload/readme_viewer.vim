@@ -8,7 +8,7 @@ let s:plugin_managers = {
 let s:plugin_manager = s:plugin_managers[g:readme_viewer#plugin_manager]
 
 function! readme_viewer#open_buffer(path, name, ...) abort
-  let mods = a:0 > 1 ? a:1 : ''
+  let mods = a:0 > 0 ? a:1 : ''
   let open_help_buffer = get(g:, 'readme_viewer#open_help_buffer', v:true)
   let open_command = get(g:, 'readme_viewer#open_command', 'new')
   let readme = get(globpath(a:path, '\creadme*', v:false, v:true), 0, '')

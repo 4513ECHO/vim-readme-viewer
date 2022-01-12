@@ -18,7 +18,7 @@ readme_viewer.packer = function(plugin, mods)
     vim.fn['readme_viewer#error']('Plugins path is emtpy')
     return
   end
-  vim.fn['readme_viewer#open'](plugin_data.path, plugin, mods)
+  vim.fn['readme_viewer#open_buffer'](plugin_data.path, plugin, mods)
 end
 
 readme_viewer.packer_completion = function(ArgLead, _, _)

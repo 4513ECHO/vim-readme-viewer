@@ -1,6 +1,6 @@
 
 function! readme_viewer#minpac#open(plugin, mods) abort
-  let plugin = minpac#getpluginfo(a:plugin)
+  let plugin = readme_viewer#minpac#get(a:plugin)
   if empty(plugin)
     call readme_viewer#error('Cannot find plugin name:', a:plugin)
     return
