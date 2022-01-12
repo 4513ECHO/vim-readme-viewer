@@ -10,6 +10,7 @@ CONTENTS					*readme-viewer-contents*
 Introduction					|readme-viewer-introdution|
 Interface					|readme-viewer-interface|
   Commands					|readme-viewer-commands|
+  Functions					|readme-viewer-functions|
   Variables					|readme-viewer-variables|
   Autocommands					|readme-viewer-autocommands|
 About						|readme-viewer-about|
@@ -58,16 +59,11 @@ INTERFACE					*readme-viewer-interface*
 COMMANDS					*readme-viewer-commands*
 
 :DeinReadme {plugin}				*:DeinReadme*
-	Open plugin's README(.md) viewing window.
-
 :PlugReadme {plugin}				*:PlugReadme*
-	This is same as |:DeinReadme|. Please see it.
-
 :PackReadme {plugin}				*:PackReadme*
-	This is same as |:DeinReadme|. Please see it.
-
 :PackerReadme {plugin}				*:PackerReadme*
-	This is same as |:DeinReadme|. Please see it.
+	Open {plugin}'s README file. |g:readme_viewer#plugin_manager| defines
+	the command you can use. Please see it.
 
 :ReadmeHelp					*:ReadmeHelp*
 	Open current buffer plugin on |:help|. It sometimes fails when the
@@ -76,6 +72,11 @@ COMMANDS					*readme-viewer-commands*
 :ReadmeDir					*:ReadmeDir*
 	Open. It is same as `:edit %:p:h` . It is useful when you use some
 	filer plugins. (e.g. |netrw|)
+
+------------------------------------------------------------------------------
+FUNCTIONS					*readme-viewer-functions*
+
+Undocumented now
 
 ------------------------------------------------------------------------------
 VARIABLES					*readme-viewer-variables*

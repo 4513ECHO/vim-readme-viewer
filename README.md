@@ -10,6 +10,7 @@ Please read [help](doc/readme_viewer.txt) for details.
 * [vim-readme-viewer](#vim-readme-viewer)
    * [About](#about)
    * [Why use this?](#why-use-this)
+   * [Features](#features)
    * [Installation](#installation)
       * [<a href="https://github.com/Shougo/dein.vim">dein.vim</a>](#deinvim)
       * [<a href="https://github.com/junegunn/vim-plug">vim-plug</a>](#vim-plug)
@@ -48,12 +49,6 @@ If you are using other plugin managers, please try:
 " ... and other plugins
 ```
 
-**Note:** This plugin is working with
-[dein.vim](https://github.com/Shougo/dein.vim),
-[vim-plug](https://github.com/junegunn/vim-plug),
-[minpac](https://github.com/k-takata/minpac) and
-[packer.nvim](https://github.com/wbthomason/packer.nvim) now.
-
 ## Why use this?
 
 Vim help file is very useful and viewing it is very easy. However, some plugins,
@@ -61,6 +56,16 @@ which is special such as colorschemes or tiny plugins, sometimes don't have vim
 help file. So, when you want to custom those plugins, you have to read README.md
 or look at plugins' inside code. It is not good for you because you have to do
 it outside vim.
+
+## Features
+
+- Support many plugin managers
+  - [dein.vim](https://github.com/Shougo/dein.vim)
+  - [vim-plug](https://github.com/junegunn/vim-plug)
+  - [minpac](https://github.com/k-takata/minpac)
+  - [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- Include fuzzy finders source
+  - [ddu.vim](https://github.com/Shougo/ddu.vim) (**experimental** feature)
 
 ## Installation
 
@@ -144,6 +149,7 @@ Plug 'junegunn/vim-plug'
 ## TODO
 
 - Improve README.md and doc/readme_viewer.txt
+  - [ ] add new functions to doc/readme_viewer.txt
 - Support other plugin managers
   - [ ] runtimepath based plugin manager
   - [ ] buildin package system based plugin manager
