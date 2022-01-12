@@ -5,7 +5,7 @@ function! readme_viewer#plug#open(plugin, mods) abort
     call readme_viewer#error('Cannot find plugin name:', a:plugin)
     return
   endif
-  call readme_viewer#open_buffer(plugin.dir, a:plugin, a:mods)
+  call readme_viewer#open_buffer(plugin.path, plugin.name, a:mods)
 endfunction
 
 function! readme_viewer#plug#get(...) abort
