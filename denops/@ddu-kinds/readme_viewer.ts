@@ -1,9 +1,8 @@
-import type { ActionArguments } from "https://pax.deno.dev/Shougo/ddu.vim@492abe0/denops/ddu/base/kind.ts";
-import type { Denops } from "https://deno.land/x/denops_std@v1.11.3/mod.ts";
+import type { ActionArguments } from "https://deno.land/x/ddu_vim@v0.2.0/base/kind.ts";
 import {
   ActionFlags,
   BaseKind,
-} from "https://pax.deno.dev/Shougo/ddu.vim@492abe0/denops/ddu/types.ts";
+} from "https://deno.land/x/ddu_vim@v0.2.0/types.ts";
 
 export interface ActionData {
   name: string;

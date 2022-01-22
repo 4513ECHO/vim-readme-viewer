@@ -1,8 +1,7 @@
-import type { Denops } from "https://deno.land/x/denops_std@v1.11.3/mod.ts";
-import type { GatherArguments } from "https://pax.deno.dev/Shougo/ddu.vim@492abe0/denops/ddu/base/source.ts";
-import type { Item } from "https://pax.deno.dev/Shougo/ddu.vim@492abe0/denops/ddu/types.ts";
-import { BaseSource } from "https://pax.deno.dev/Shougo/ddu.vim@492abe0/denops/ddu/types.ts";
-import { ensureObject } from "https://deno.land/x/unknownutil@v0.1.1/mod.ts";
+import type { GatherArguments } from "https://deno.land/x/ddu_vim@v0.2.0/base/source.ts";
+import type { Item } from "https://deno.land/x/ddu_vim@v0.2.0/types.ts";
+import { BaseSource } from "https://deno.land/x/ddu_vim@v0.2.0/types.ts";
+import { ensureObject } from "https://deno.land/x/unknownutil@v1.1.4/mod.ts";
 import type { ActionData } from "../@ddu-kinds/readme_viewer.ts";
 
 type Params = Record<never, never>;
