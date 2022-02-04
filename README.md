@@ -20,6 +20,7 @@ Please read [help](doc/readme_viewer.txt) for details.
       * [General](#general)
       * [vim-plug](#vim-plug-1)
       * [packer.nvim](#packernvim-1)
+      * [ddu.vim](#dduvim)
    * [TODO](#todo)
    * [Introduced Articles](#introduced-articles)
    * [License](#license)
@@ -145,6 +146,21 @@ Plug 'junegunn/vim-plug'
   it, `vim-readme-viewer` throws error.
 - plugin's path data is sometimes empty. See also
   [wbthomason/packer.vim#765](https://github.com/wbthomason/packer.nvim/issues/765).
+
+### ddu.vim
+
+Usage examples:
+
+```vim
+" Set kind default action
+call ddu#custom#pathch_global({
+      \ 'kindOptions': {
+      \   'readme_viewer': {
+      \     'defaultAction': 'open',
+      \ }}})
+" Use readme_viewer source.
+call ddu#start({'sources': [{'name': 'readme_viewer'}]})
+```
 
 ## TODO
 

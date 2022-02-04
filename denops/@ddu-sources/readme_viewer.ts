@@ -1,6 +1,6 @@
-import type { GatherArguments } from "https://deno.land/x/ddu_vim@v0.2.0/base/source.ts";
-import type { Item } from "https://deno.land/x/ddu_vim@v0.2.0/types.ts";
-import { BaseSource } from "https://deno.land/x/ddu_vim@v0.2.0/types.ts";
+import type { GatherArguments } from "https://deno.land/x/ddu_vim@v0.7.0/base/source.ts";
+import type { Item } from "https://deno.land/x/ddu_vim@v0.7.0/types.ts";
+import { BaseSource } from "https://deno.land/x/ddu_vim@v0.7.0/types.ts";
 import { ensureObject } from "https://deno.land/x/unknownutil@v1.1.4/mod.ts";
 import type { ActionData } from "../@ddu-kinds/readme_viewer.ts";
 
