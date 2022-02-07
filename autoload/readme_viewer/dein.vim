@@ -21,7 +21,7 @@ function! readme_viewer#dein#get(...) abort
 endfunction
 
 function! readme_viewer#dein#completion(ArgLead, CmdLine, CursorPos) abort
-  if exists('?matchfuzzy')
+  if exists('*matchfuzzy')
     if empty(a:ArgLead)
       return sort(keys(dein#get()))
     else

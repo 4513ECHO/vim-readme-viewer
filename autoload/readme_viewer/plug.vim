@@ -21,7 +21,7 @@ function! readme_viewer#plug#get(...) abort
 endfunction
 
 function! readme_viewer#plug#completion(ArgLead, CmdLine, CursorPos) abort
-  if exists('?matchfuzzy')
+  if exists('*matchfuzzy')
     if empty(a:ArgLead)
       return sort(keys(g:plugs))
     else
