@@ -76,7 +76,34 @@ COMMANDS					*readme-viewer-commands*
 ------------------------------------------------------------------------------
 FUNCTIONS					*readme-viewer-functions*
 
-Undocumented now
+						*readme_viewer#dein#get()*
+						*readme_viewer#plug#get()*
+						*readme_viewer#minpac#get()*
+readme_viewer#{plugin-manager}#get([{plugin-name}])
+	Get the plugin information dictionary. If you omit {plugin-name},
+	vim-readme-viewer will return the all of plugins directory. Its key is
+	the plugin name and its value is the plugin information dictionary.
+
+readme_viewer#get([{plugin-name}])		*readme_viewer#get()*
+	Get the plugin information dictionary. It is alias of current plugin
+	manager's `get` function. Please see above.
+
+						*readme_viewer#dein#open()*
+						*readme_viewer#plug#open()*
+						*readme_viewer#minpac#open()*
+readme_viewer#{plugin-manager}#open({plugin}, {mods})
+	Open {plugin}'s README file. {mods} is command modifiers. (e.g.
+	"vertical topleft")
+
+readme_viewer#open({plugin}, {mods})		*readme_viewer#open()*
+	Open {plugin}'s README file. {mods} is command modifiers. It is alias
+	of current plugin manager's `open` function. Please see above.
+
+						*readme_viewer#open_buffer()*
+readme_viewer#open_buffer({path}, {name} [, {mods}])
+	Open {plugin}'s README file. {mods} is command modifiers. (e.g.
+	"vertical topleft") Difference from |readme_viewer#open()| is to
+	handle error or not.
 
 ------------------------------------------------------------------------------
 VARIABLES					*readme-viewer-variables*
