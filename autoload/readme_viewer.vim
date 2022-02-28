@@ -3,6 +3,7 @@ let s:plugin_managers = {
       \ 'vim-plug': 'plug',
       \ 'minpac': 'mimpac',
       \ 'packer.nvim': 'packer',
+      \ 'vim-jetpack': 'jetpack',
       \ }
 
 let s:plugin_manager = s:plugin_managers[g:readme_viewer#plugin_manager]

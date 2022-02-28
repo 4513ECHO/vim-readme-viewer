@@ -42,6 +42,7 @@ manager. However, it sometimes may fail. I recommend that you set manually
 	let g:readme_viewer#plugin_manager = 'vim-plug'  " for vim-plug
 	let g:readme_viewer#plugin_manager = 'minpac'  " for minpac
 	let g:readme_viewer#plugin_manager = 'packer.nvim'  " for packer.nvim
+	let g:readme_viewer#plugin_manager = 'vim-jetpack'  " for vim-jetpack"
 
 Note: On default, vim-plug is not register itself as a plugin. So,
 vim-readme-viewer cannot open vim-plug's README.md. If you want to view
@@ -49,8 +50,8 @@ vim-plug's README.md, you register vim-plug as a plugin.
 >
 	Plug 'junegunn/vim-plug'
 
-Note: This plugin is working with |dein.vim|, |vim-plug|, |minpac| and
-|packer.nvim| now.
+Note: This plugin is working with |dein.vim|, |vim-plug|, |minpac|,
+|jetpack| and |packer.nvim| now.
 
 ==============================================================================
 INTERFACE					*readme-viewer-interface*
@@ -62,6 +63,7 @@ COMMANDS					*readme-viewer-commands*
 :PlugReadme {plugin}				*:PlugReadme*
 :PackReadme {plugin}				*:PackReadme*
 :PackerReadme {plugin}				*:PackerReadme*
+:JetpackReadme {plugin}				*:JetpackReadme*
 	Open {plugin}'s README file. |g:readme_viewer#plugin_manager| defines
 	the command you can use. Please see it.
 
@@ -79,6 +81,7 @@ FUNCTIONS					*readme-viewer-functions*
 						*readme_viewer#dein#get()*
 						*readme_viewer#plug#get()*
 						*readme_viewer#minpac#get()*
+						*readme_viewer#jetpack#get()*
 readme_viewer#{plugin-manager}#get([{plugin-name}])
 	Get the plugin information dictionary. If you omit {plugin-name},
 	vim-readme-viewer will return the all of plugins directory. Its key is
@@ -91,6 +94,7 @@ readme_viewer#get([{plugin-name}])		*readme_viewer#get()*
 						*readme_viewer#dein#open()*
 						*readme_viewer#plug#open()*
 						*readme_viewer#minpac#open()*
+						*readme_viewer#jetpack#open()*
 readme_viewer#{plugin-manager}#open({plugin}, {mods})
 	Open {plugin}'s README file. {mods} is command modifiers. (e.g.
 	"vertical topleft")
@@ -118,6 +122,7 @@ g:readme_viewer#plugin_manager		*g:readme_viewer#plugin_manager*
 	"|vim-plug|"	|:PlugReadme|
 	"|minpac|"	|:PackReadme|
 	"|packer.nvim|"	|:PackerReadme|
+	"|vim-jetpack|"	|:JetpackReadme|
 
 b:readme_data					*b:readme_data*
 			dict

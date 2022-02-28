@@ -16,6 +16,7 @@ Please read [help](doc/readme_viewer.txt) for details.
       * [<a href="https://github.com/junegunn/vim-plug">vim-plug</a>](#vim-plug)
       * [<a href="https://github.com/k-takata/minpac">minpac</a>](#minpac)
       * [<a href="https://github.com/wbthomason/packer.nvim">packer.nvim</a>](#packernvim)
+      * [<a href="https://github.com/tani/vim-jetpack">vim-jetpack</a>](#vim-jetpack)
    * [Tips](#tips)
       * [General](#general)
       * [vim-plug](#vim-plug-1)
@@ -47,6 +48,7 @@ If you are using other plugin managers, please try:
 :PlugReadme vim-readme-viewer  " for vim-plug
 :PackReadme vim-readme-viewer  " for minpac
 :PackerReadme vim-readme-viewer  " for packer.nvim
+:JetpackReadme vim-readme-viewer  " for vim-jetpack
 " ... and other plugins
 ```
 
@@ -65,6 +67,7 @@ it outside vim.
   - [vim-plug](https://github.com/junegunn/vim-plug)
   - [minpac](https://github.com/k-takata/minpac)
   - [packer.nvim](https://github.com/wbthomason/packer.nvim)
+  - [vim-jetpack](https://github.com/tani/vim-jetpack)
 - Include fuzzy finders source
   - [ddu.vim](https://github.com/Shougo/ddu.vim) (**experimental** feature)
 
@@ -115,6 +118,13 @@ use {
     vim.g['readme_viewer#plugin_manager'] = 'packer.nvim'
   end
 }
+```
+
+### [vim-jetpack](https://github.com/tani/vim-jetpack)
+
+```vim
+let g:readme_viewer#plugin_manager = 'vim-jetpack'
+Jetpack '4513ECHO/vim-readme-viewer', { 'on': 'JetpackReadme' }
 ```
 
 ## Tips
