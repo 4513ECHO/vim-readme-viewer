@@ -14,13 +14,13 @@ function! readme_viewer#jetpack#get(...) abort
     return {}
   endif
   if a:0 > 0
-    return {'path': plugins.pathname, 'name': plugins.name}
+    return {'path': plugins.path, 'name': plugins.name}
   else
     let dict = {}
     for pkg in plugins
       let info = jetpack#get(pkg)
       call extend(dict, {info.name: {
-          \ 'path': info.pathname,
+          \ 'path': info.path,
           \ 'name': info.name,
           \ }})
     endfor
@@ -31,12 +31,12 @@ endfunction
 function! readme_viewer#jetpack#completion(ArgLead, CmdLine, CursorPos) abort
   if exists('*matchfuzzy')
     if empty(a:ArgLead)
-      return sort(keys(jetpack#names()))
+      return sort(jetpack#names())
     else
-      return matchfuzzy(sort(keys(jetpack#names())), a:ArgLead)
+      return matchfuzzy(sort(jetpack#names()), a:ArgLead)
     endif
   else
-    return filter(sort(keys(jetpack#names())),
+    return filter(sort(jetpack#names()),
           \ {_, val -> val =~? a:ArgLead})
   endif
 endfunction
