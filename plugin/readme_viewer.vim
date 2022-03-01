@@ -19,6 +19,9 @@ elseif g:readme_viewer#plugin_manager ==# 'vim-plug' || exists('*plug#begin')
 elseif g:readme_viewer#plugin_manager ==# 'minpac' || exists('*minpac#init')
   command! -nargs=1 -bar -complete=customlist,readme_viewer#minpac#completion
         \ PackReadme call readme_viewer#minpac#open(<q-args>, <q-mods>)
+elseif g:readme_viewer#plugin_manager ==# 'vim-jetpack' || exists('*jetpack#begin')
+  command! -nargs=1 -bar -complete=customlist,readme_viewer#jetpack#completion
+        \ JetpackReadme call readme_viewer#jetpack#open(<q-args>, <q-mods>)
 endif
 
 if has('nvim')
